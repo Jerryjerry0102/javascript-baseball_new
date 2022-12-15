@@ -3,11 +3,12 @@ const { Console } = require('@woowacourse/mission-utils');
 const InputView = {
   COMMAND: '숫자를 입력해주세요',
   LENGTH: 3,
-  readUserNumbers() {
+  readUserNumbers(callback) {
     Console.readLine(InputView.COMMAND, answer => {
-      const userNumbers = Array.from(answer);
+      const userNumbers = answer.split('').map(number => Number(number));
       InputView.validateUserNumbers(userNumbers);
-      Console.print(userNumbers);
+      console.log(userNumbers); // 삭제
+      callback(userNumbers);
     });
   },
   validateUserNumbers(userNumbers) {
@@ -16,7 +17,5 @@ const InputView = {
     if (userNumbers.length !== new Set(userNumbers).size) throw new Error();
   },
 };
-
-InputView.readUserNumbers();
 
 module.exports = InputView;
