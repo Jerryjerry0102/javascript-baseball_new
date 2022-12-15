@@ -5,11 +5,14 @@ const NumbersGenerator = {
   END_INCLUSIVE: 9,
   COUNT: 3,
   generate() {
-    return Random.pickUniqueNumbersInRange(
-      NumbersGenerator.START_INCLUSIVE,
-      NumbersGenerator.END_INCLUSIVE,
-      NumbersGenerator.COUNT
-    );
+    const computerNumbers = [];
+    while (computerNumbers.length < this.COUNT) {
+      const number = Random.pickNumberInRange(this.START_INCLUSIVE, this.END_INCLUSIVE);
+      if (!computerNumbers.includes(number)) {
+        computerNumbers.push(number);
+      }
+    }
+    return computerNumbers;
   },
 };
 
