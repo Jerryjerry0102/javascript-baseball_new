@@ -9,4 +9,9 @@ describe('InputView 테스트', () => {
       }).toThrow();
     }
   );
+  test.each([[12], [3], [0], ['일'], ['이']])('1 또는 2가 아닌 경우 예외 처리', input => {
+    expect(() => {
+      InputView.validateRetry(input);
+    }).toThrow();
+  });
 });
