@@ -8,7 +8,7 @@ class App {
   #RETRY;
 
   constructor() {
-    this.#RETRY = '1';
+    this.#RETRY = 1;
   }
 
   play() {
@@ -38,8 +38,8 @@ class App {
 
   controlRetry() {
     InputView.readRetry(answer => {
-      if (answer === this.RETRY) this.startBaseballGame();
-      Console.close();
+      if (answer === this.#RETRY) this.startBaseballGame();
+      else Console.close();
     });
   }
 }
