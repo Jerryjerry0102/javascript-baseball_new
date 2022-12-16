@@ -18,7 +18,6 @@ class App {
 
   startBaseballGame() {
     const computerNumbers = NumbersGenerator.generate();
-    console.log(computerNumbers); // 삭제
     this.numbersComparator = new NumbersComparator(computerNumbers);
     this.controlUserNumbers();
   }
@@ -39,7 +38,7 @@ class App {
   controlRetry() {
     InputView.readRetry(answer => {
       if (answer === this.#RETRY) this.startBaseballGame();
-      Console.close();
+      else Console.close();
     });
   }
 }
