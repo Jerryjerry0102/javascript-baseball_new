@@ -18,7 +18,6 @@ class App {
 
   startBaseballGame() {
     const computerNumbers = NumbersGenerator.generate();
-    console.log(computerNumbers); // 삭제
     this.numbersComparator = new NumbersComparator(computerNumbers);
     this.controlUserNumbers();
   }
