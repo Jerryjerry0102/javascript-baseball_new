@@ -1,7 +1,7 @@
 const { Console } = require('@woowacourse/mission-utils');
 
 const InputView = {
-  COMMAND: '숫자를 입력해주세요',
+  COMMAND: '숫자를 입력해주세요 : ',
   LENGTH: 3,
   RETRY: 1,
   END: 2,
@@ -10,7 +10,6 @@ const InputView = {
     Console.readLine(this.COMMAND, answer => {
       const userNumbers = answer.split('').map(number => Number(number));
       this.validateUserNumbers(userNumbers);
-      console.log(userNumbers); // 삭제
       callback(userNumbers);
     });
   },
